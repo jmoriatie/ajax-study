@@ -1,0 +1,41 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Document</title>
+</head>
+<body>
+<h2>Ajax를 통한 비동기 아이템리스트 출력 Test</h2>
+<h4>1. Json 데이터 append</h4>
+<h4>2. Controller 를 통한 model 객체 전달</h4>
+<hr>
+
+<p>js, jquery 연동 Test</p>
+<button type="button" th:onclick="showAlert()">Show Alert</button>
+<button type="button" th:onclick="test('인자로 넘긴 값')">test Click</button>
+<hr>
+
+<p>json 데이터 받기, model 데이터 받기</p>
+<label for="input-json-text"></label><input type="text" id="input-json-text" placeholder="검색어 ex)바지, 티셔츠">
+<button type="button" th:onclick="getItems()">JSON 데이터 받기</button>
+<br>
+<label for="input-text"></label><input type="text" id="input-text" placeholder="검색어 ex)바지, 티셔츠">
+<button type="button" th:onclick="getItemsModel()">Model 데이터 받기</button>
+<hr>
+<p>API 영역</p>
+<div id="t_view">
+</div>
+<hr>
+<p>Contoller 영역</p>
+<div id="t_view-model">
+</div>
+
+<script type="text/javascript" th:src="@{/js/jquery-3.6.1.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/item.js}"></script>
+</body>
+</html>

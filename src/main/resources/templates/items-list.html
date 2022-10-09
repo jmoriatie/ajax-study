@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<div id="t_view-model">
+    <p th:if="${isItemsZero}" th:text="|검색한 키워드의 아이템이 없습니다.|"></p>
+    <div th:each="item : ${items}">
+        <td><a th:href="@{/item/item?search-item={itemId}(itemId=${item.id})}"
+               th:text="${item.itemName}">상품명</a></td>
+        <td th:text="${{item.price}}">99999</td>
+        <td th:text="${{item.quantity}}">99</td>
+    </div>
+</div>
+
+</html>
